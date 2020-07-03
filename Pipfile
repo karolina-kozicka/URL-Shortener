@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "==3.7.9"
+black = "==19.10b0"
+pylint-django = "==2.0.14"
+
+[packages]
+django = "==3.0.8"
+django-environ = "==0.4.5"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
