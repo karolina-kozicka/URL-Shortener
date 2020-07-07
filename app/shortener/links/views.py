@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -37,3 +37,9 @@ class LinksDeleteView(generic.DeleteView):
     model = models.Link
     context_object_name = "link"
     success_url = reverse_lazy("links:list")
+
+class RedirectionView(generic.base.RedirectView):
+    def get_redirect_url(self, *args, **kwargs):
+        hash = kwargs.get("hash")
+        link = get_object_or_404(models.Link, hash=hash)
+        return link.url

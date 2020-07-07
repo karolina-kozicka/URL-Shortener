@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from shortener.links import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("links/", include("shortener.links.urls")),
+    path("<str:hash>/", views.RedirectionView.as_view(), name='redirection'),
 ]
