@@ -21,5 +21,6 @@ from shortener.links import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("links/", include("shortener.links.urls")),
+    path("user/", include("shortener.users.urls")),
     path("<str:hash>/", views.RedirectionView.as_view(), name='redirection'),
 ]
