@@ -1,0 +1,40 @@
+div.container {
+  margin-top: 150px;
+  margin-bottom: 0px;
+}
+
+.home {
+  font-family: "Special Elite", cursive;
+}
+
+.flex-container {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.text.flex-item {
+  width: 400px;
+}
+
+.text-author {
+  text-align: right;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.text-grand {
+  font-size: 25px;
+  padding: 25px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}

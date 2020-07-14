@@ -1,0 +1,15 @@
+{% autoescape off %}
+Hello,
+
+We have sent you this email in response to your request to registration on URL-Shortener. 
+
+To active your account for URL-Shortener, please follow the link below:
+
+{{ scheme }}://{{ site }}{% url 'users:registration_activate' activation_key=activation_key %}
+Link is active for {{expiration_days}} days.
+
+If you did not make this request please ignore this email.
+
+Kindest regards ,
+URL-Shortener /Customer Service/
+{% endautoescape %}

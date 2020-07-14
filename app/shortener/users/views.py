@@ -91,9 +91,9 @@ class ActivationView(django_registration_views.ActivationView):
 
 
 class EditView(LoginRequiredMixin, generic.UpdateView):
-    template_name = "users/edit_name.html"
+    template_name = "users/edit.html"
     model = User
-    fields = ("username", "email")
+    fields = ("username",)
     success_url = reverse_lazy("users:edit")
 
     def get_object(self, queryset=None):

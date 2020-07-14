@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 from shortener.links import views
+from shortener.users.views import HomeView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("", HomeView.as_view(), name="home"),
+    path("admin/", admin.site.urls),
     path("links/", include("shortener.links.urls")),
     path("user/", include("shortener.users.urls")),
-    path("<str:hash>/", views.RedirectionView.as_view(), name='redirection'),
+    path("<str:hash>/", views.RedirectionView.as_view(), name="redirection"),
 ]

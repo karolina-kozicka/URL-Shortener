@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
 import environ
+
+from django.urls import reverse_lazy
 
 ROOT_DIR = environ.Path(__file__) - 2  # (app/config/settings.py - 2 = app/)
 APPS_DIR = ROOT_DIR.path("shortener")
@@ -131,4 +132,10 @@ STATICFILES_DIRS = [str(APPS_DIR.path("static"))]
 
 AUTH_USER_MODEL = "users.User"
 
-# TODO Add LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL,LOGIN_URL
+LOGIN_REDIRECT_URL = reverse_lazy("home")
+
+LOGOUT_REDIRECT_URL = reverse_lazy("home")
+
+LOGIN_URL = reverse_lazy("users:login")
+
+ACCOUNT_ACTIVATION_DAYS = 10
