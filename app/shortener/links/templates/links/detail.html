@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <div class="back">
+        <a href="{% url 'links:list'%}" class="btn btn-outline-dark" role="button"><i class="fas fa-arrow-circle-left"></i></a>
+    </div>
+    <div class="text-center label">
+        <h2>Link "{{link.hash}}"</h2>
+    </div>
+    <div class="info">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row" class="bg-dark">URL</th>
+                    <td>{{link.url}}</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="bg-dark">HASH</th>
+                    <td>{{link.hash}}</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="bg-dark">VALID DATE</th>
+                    <td>{{link.valid_date|default:"Unlimited"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

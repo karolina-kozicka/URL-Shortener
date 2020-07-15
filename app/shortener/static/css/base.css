@@ -38,3 +38,42 @@ body {
 #page-content {
   flex: 1 0 auto;
 }
+
+h1, h2, h3, h4 {
+    font-family: "Special Elite", cursive;
+}
+
+.text-form{
+    font-size: 20px;
+    padding: 50px;
+}
+
+.list{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.button-panel{
+    column-count: 2;
+    column-gap: 4%;
+}
+.one-button{
+    width: 48%;
+    margin: auto;
+}
+.back{
+    font-size: 25px;
+    color: black;
+}
+.label{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.info{
+    font-family: "Special Elite", cursive;
+    font-size: 20px;
+    padding: auto;
+}
+
+.info th{
+    color: white;
+}
