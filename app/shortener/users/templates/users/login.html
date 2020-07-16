@@ -1,9 +1,32 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
-  <form method="POST"> 
-    {% csrf_token %} 
-    {{ form.as_p }} 
-    <input type="submit" value="Submit"> 
-  </form>
+  <div class="login">
+    <div class="flex-container">
+      <div class="text flex-item text-left">
+        <h1>Login</h1>
+        <form method="POST"> 
+          {% csrf_token %}
+          {{ form|crispy }}
+          <div>
+            <input class="btn btn-lg btn-block btn-dark" type="submit" value="Submit"> 
+          </div>
+        </form>
+        <div class="text-center reset">
+          <a href="{% url 'users:password_reset' %}">Reset password</a>
+        </div>
+      </div>
+      <div class="flex-item">
+        <img class="image" src="{% static 'image/img1.png' %}" alt="Image"/>
+      </div>
+    </div>
+    <div class="register">
+      <h5 class="text-center">Don't have an account?</h5>
+      <div class="one-button">
+        <a href="{% url 'users:registration_register' %}"  class="btn btn-lg btn-block btn-outline-dark" role="button"><i class="fas fa-plus"></i> Create account</a>
+      </div>
+    </div>
+  </div>
 {% endblock %}
