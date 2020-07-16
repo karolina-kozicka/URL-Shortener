@@ -1,6 +1,7 @@
 header .image-logo {
   height: 70px;
   display: block;
+  filter: invert(100%)
 }
 
 header {
