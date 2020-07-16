@@ -2,16 +2,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <div class="text-center label">
-        <h2>Delete link</h2> 
+  <div class="text-center label">
+    <h2>Delete link</h2> 
+  </div>
+  <form method="POST"> 
+    {% csrf_token %}
+    {{ form|crispy }}
+    <p class="text-center text-form"> Are you sure you want to delete "{{ link.hash }}"?</p>
+    <div class="button-panel">
+      <input class="btn btn-lg btn-block btn-dark" type="submit" value="Delete">
+      <a href="{% url 'links:list'%}"class="btn btn-lg btn-block btn-outline-dark" role="button">Cancel</a>
     </div>
-    <form method="POST"> 
-        {% csrf_token %}
-        {{ form|crispy }}
-        <p class="text-center text-form"> Are you sure you want to delete "{{ link.hash }}"?</p>
-            <div class="button-panel">
-            <input class="btn btn-lg btn-block btn-dark" type="submit" value="Delete">
-        <a href="{% url 'links:list'%}"class="btn btn-lg btn-block btn-outline-dark" role="button">Cancel</a>
-        </div>
-    </form>
+  </form>
 {% endblock %}

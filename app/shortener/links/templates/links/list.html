@@ -1,50 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div>
     <div>
-        <div>
-            {% if links %}
-                <div class="text-center label">
-                    <h2> Yours links </h2>
-                </div>
-                <div class="list">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">URL</th>
-                                <th scope="col">Short URL</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for link in links %}
-                                <tr>
-                                    <td>{{ forloop.counter }}</td>
-                                    <td>{{link.url}}</td>
-                                    <td>{{link.hash}}</td>
-                                    <td>
-                                        <a href="{% url 'links:detail' link.id %}" class="btn btn-outline-primary" role="button"><i class="fas fa-info"></i></a>
-                                        <a href="{% url 'links:edit' link.id %}" class="btn btn-outline-secondary" role="button"><i class="fas fa-edit"></i></a>
-                                        <a href="{% url 'links:delete' link.id %}" class="btn btn-outline-danger" role="button"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                <div class="one-button">
-                    <a href="{% url 'links:add' %}" class="btn btn-lg btn-block btn-outline-dark" role="button"><i class="fas fa-plus"></i></a>
-                </div>
-        {% else %}
-                <div class="info">
-                    upps! 
-                    <br>
-                    It is incredible but you have no links.
-                    <br>
-                    You must change it!
-                </div>
-            {% endif %}
+      {% if links %}
+        <div class="text-center label">
+          <h2> Yours links </h2>
         </div>
+        <div class="list">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">URL</th>
+                <th scope="col">Short URL</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for link in links %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{link.url}}</td>
+                  <td>{{link.hash}}</td>
+                  <td>
+                    <a href="{% url 'links:detail' link.id %}" class="btn btn-outline-primary" role="button"><i class="fas fa-info"></i></a>
+                    <a href="{% url 'links:edit' link.id %}" class="btn btn-outline-secondary" role="button"><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'links:delete' link.id %}" class="btn btn-outline-danger" role="button"><i class="fas fa-trash"></i></a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="one-button">
+          <a href="{% url 'links:add' %}" class="btn btn-lg btn-block btn-outline-dark" role="button"><i class="fas fa-plus"></i></a>
+        </div>
+      {% else %}
+        <div class="info">
+          upps! 
+          <br>
+          It is incredible but you have no links.
+          <br>
+          You must change it!
+        </div>
+      {% endif %}
     </div>
+  </div>
 {% endblock %}
