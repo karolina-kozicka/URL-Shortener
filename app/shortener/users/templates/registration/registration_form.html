@@ -1,9 +1,23 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
-  <form method="POST"> 
-    {% csrf_token %} 
-    {{ form.as_p }} 
-    <input type="submit" value="Submit"> 
-  </form>
+  <div class="registration">
+    <div class="flex-container">
+      <div class="text flex-item text-left">
+        <h1>Registration</h1>
+        <form method="POST"> 
+          {% csrf_token %}
+          {{ form|crispy }}
+          <div>
+            <input class="btn btn-lg btn-block btn-dark" type="submit" value="Submit"> 
+          </div>
+        </form>
+      </div>
+      <div class="flex-item">
+        <img class="image" src="{% static 'image/img1.png' %}" alt="Image"/>
+      </div>
+    </div>
+  </div>
 {% endblock %}

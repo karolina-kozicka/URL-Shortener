@@ -1,8 +1,20 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
-  <div>
-    Ups...
-    So sorry, account activation fails.
+  <div class="registration">
+    <div class="flex-container">
+      <div class="text flex-item">
+        <h1>Registration</h1>
+        <div>
+          Ups...
+          So sorry, account activation fails.
+        </div>
+      </div>
+      <div class="flex-item">
+        <img class="image" src="{% static 'image/img1.png' %}" alt="Image"/>
+      </div>
+    </div>
   </div>
 {% endblock %}

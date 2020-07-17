@@ -1,8 +1,20 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
-  <div>
-    Registration of new user accounts is disabled becouse account-activation email was sent to the submitted email address.
-    If you don’t receive a message in 5 minutes, check the spam folder.
+  <div class="registration">
+    <div class="flex-container">
+      <div class="text flex-item">
+        <h1>Registration</h1>
+        <div>
+          Registration of new user accounts is disabled becouse account-activation email was sent to the submitted email address.
+          If you don’t receive a message in 5 minutes, check the spam folder.
+        </div>
+      </div>
+      <div class="flex-item">
+        <img class="image" src="{% static 'image/img1.png' %}" alt="Image"/>
+      </div>
+    </div>
   </div>
 {% endblock %}

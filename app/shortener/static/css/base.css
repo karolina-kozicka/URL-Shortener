@@ -41,6 +41,8 @@ body {
 
 #page-content {
   flex: 1 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .text-form{
