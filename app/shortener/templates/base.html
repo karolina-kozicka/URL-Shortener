@@ -29,6 +29,12 @@
 
       {% block container %}
           <div class="container">
+            {% for message in messages %}
+              <div class="text-center alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+            
             {% block content %}
             {% endblock %}
           </div>
