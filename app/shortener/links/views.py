@@ -77,8 +77,8 @@ class RedirectionView(LoginRequiredMixin, generic.base.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         hash = kwargs.get("hash")
         link = get_object_or_404(models.Link, hash=hash)
+        link.increment_views()
         return link.url
 
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
-
