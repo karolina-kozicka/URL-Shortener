@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% load domain %}
 
 {% block content %}
+  {% get_domain as domain %}
   <div>
     <div class="back">
       <a href="{% url 'links:list'%}" class="btn btn-outline-dark" role="button"><i class="fas fa-arrow-circle-left"></i></a>
@@ -16,8 +18,17 @@
             <td>{{link.url}}</td>
           </tr>
           <tr>
-            <th scope="row" class="bg-dark">HASH</th>
-            <td>{{link.hash}}</td>
+            <th scope="row" class="bg-dark green">SHORT URL</th>
+            <td class="double-td">
+              <div>
+                {{ request.scheme }}://{{ domain }}/{{link.hash}}
+              </div>
+              <div>
+                <button class="btn copy btn-dark" data-clipboard-text="{{ request.scheme }}://{{ domain }}/{{link.hash}}">
+                  <i class="far fa-copy"></i>
+                </button>
+              </div>
+            </td>
           </tr>
           <tr>
             <th scope="row" class="bg-dark">VALID DATE</th>

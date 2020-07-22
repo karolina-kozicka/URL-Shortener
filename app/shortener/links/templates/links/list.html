@@ -11,11 +11,12 @@
         </div>
         <div class="list">
           <table class="table">
-            <thead class="thead-dark">
+            <thead class="thead-dark info">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">URL</th>
                 <th scope="col">Short URL</th>
+                <th></th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -25,6 +26,11 @@
                   <td>{{ forloop.counter }}</td>
                   <td>{{link.url}}</td>
                   <td>{{ request.scheme }}://{{ domain }}/{{link.hash}}</td>
+                  <td>
+                    <button class="btn copy btn-dark" data-clipboard-text="{{ request.scheme }}://{{ domain }}/{{link.hash}}">
+                      <i class="far fa-copy"></i>
+                    </button>
+                  </td>
                   <td>
                     <a href="{% url 'links:detail' link.id %}" class="btn btn-outline-primary" role="button"><i class="fas fa-info"></i></a>
                     <a href="{% url 'links:edit' link.id %}" class="btn btn-outline-secondary" role="button"><i class="fas fa-edit"></i></a>

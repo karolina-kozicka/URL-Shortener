@@ -81,10 +81,6 @@ body {
     color: white;
 }
 
-a{
-  color: rgb(88, 189, 93);
-}
-
 .register{
   padding-top: 50px;
   padding-bottom: 50px;
@@ -92,4 +88,14 @@ a{
 
 .reset{
   padding: 15px;
+}
+
+.double-td{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info .green, a{
+  color: rgb(88, 189, 93);
 }
