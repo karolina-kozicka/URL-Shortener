@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% load domain %}
 
 {% block content %}
+  {% get_domain as domain %}
   <div>
     <div>
       {% if links %}
@@ -22,7 +24,7 @@
                 <tr>
                   <td>{{ forloop.counter }}</td>
                   <td>{{link.url}}</td>
-                  <td>{{link.hash}}</td>
+                  <td>{{ request.scheme }}://{{ domain }}/{{link.hash}}</td>
                   <td>
                     <a href="{% url 'links:detail' link.id %}" class="btn btn-outline-primary" role="button"><i class="fas fa-info"></i></a>
                     <a href="{% url 'links:edit' link.id %}" class="btn btn-outline-secondary" role="button"><i class="fas fa-edit"></i></a>
