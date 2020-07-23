@@ -26,12 +26,12 @@
                   <td class="url" data-label="URL">{{link.url}}</td>
                   <td class="short-url" data-label="Short URL">{{ request.scheme }}://{{ domain }}/{{link.hash}}</td>
                   <td>
-                    <button class="btn copy btn-dark" data-clipboard-text="{{ request.scheme }}://{{ domain }}/{{link.hash}}">
+                    <button class="btn copy btn-dark small-button" data-clipboard-text="{{ request.scheme }}://{{ domain }}/{{link.hash}}">
                       <i class="far fa-copy"></i>
                     </button>
-                    <a href="{% url 'links:detail' link.id %}" class="btn btn-outline-primary" role="button"><i class="fas fa-info"></i></a>
-                    <a href="{% url 'links:edit' link.id %}" class="btn btn-outline-secondary" role="button"><i class="fas fa-edit"></i></a>
-                    <a href="{% url 'links:delete' link.id %}" class="btn btn-outline-danger" role="button"><i class="fas fa-trash"></i></a>
+                    <a href="{% url 'links:detail' link.id %}" class="btn btn-outline-primary small-button" role="button"><i class="fas fa-info"></i></a>
+                    <a href="{% url 'links:edit' link.id %}" class="btn btn-outline-secondary small-button" role="button"><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'links:delete' link.id %}" class="btn btn-outline-danger small-button" role="button"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
               {% endfor %}

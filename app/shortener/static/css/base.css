@@ -163,7 +163,7 @@ table td.short-url{
     font-size: .8em;
     text-align: right;
   }
-  
+
   .links-list table td.number{
     font-family: "Special Elite", cursive;
     font-size: 1.0em;
@@ -183,4 +183,14 @@ table td.short-url{
   .links-list table td:last-child {
     border-bottom: 0;
   }
+}
+
+.small-button{
+  width: 40px;
+  height: 40px;
+}
+
+.button-icon{
+  vertical-align: middle;
+  text-align: center;
 }
