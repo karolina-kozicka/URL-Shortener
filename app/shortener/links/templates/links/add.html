@@ -2,15 +2,11 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+  <div class="back">
+    <a href="{% url 'links:list'%}" class="btn btn-outline-dark small-button" role="button"><i class="fas button-icon fa-arrow-circle-left"></i></a>
+  </div>
   <div class="text-center label">
     <h2>Add link</h2>
   </div>
-  <form method="POST"> 
-    {% csrf_token %}
-    {{ form|crispy }}
-    <div class="button-panel">
-      <input class="btn btn-lg btn-block btn-dark" type="submit" value="Add">
-      <a href="{% url 'links:list'%}"class="btn btn-lg btn-block btn-outline-dark" role="button">Cancel</a>
-    </div>
-  </form>
+  {% crispy form %}
 {% endblock %}

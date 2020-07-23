@@ -54,23 +54,28 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
 .button-panel{
     column-count: 2;
     column-gap: 4%;
 }
+
 .one-button{
     width: 48%;
     margin: auto;
     padding: 15px;
 }
+
 .back{
     font-size: 25px;
     color: black;
 }
+
 .label{
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
 .info{
     font-family: "Special Elite", cursive;
     font-size: 20px;
@@ -88,6 +93,13 @@ body {
 
 .reset{
   padding: 15px;
+}
+
+.double-column{
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  flex-wrap: wrap;
 }
 
 .double-td{

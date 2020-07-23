@@ -1,4 +1,7 @@
 from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div, Button
+from crispy_forms.bootstrap import FormActions
 
 from . import models
 
@@ -11,8 +14,21 @@ class LinkForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop("user")
         super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Div(
+                Div("url", "hash", css_class="url-fields col-sm-6"),
+                Div("valid_date", css_class="date-field col-sm-6"),
+                css_class="double-column",
+            ),
+            Div(
+                FormActions(
+                    Submit("save", "Add", css_class="btn btn-lg btn-block btn-dark ",),
+                ),
+                css_class="one-button",
+            ),
+        )
 
     def save(self, *args, **kwargs):
         self.instance.user = self.user
         return super().save(*args, **kwargs)
-
