@@ -32,7 +32,7 @@
           </tr>
           <tr>
             <th scope="row" class="bg-dark">VALID DATE</th>
-            <td>{{link.valid_date|default:"Unlimited"}}</td>
+            <td>{{link.valid_date|date:'d F Y H:i'|default:"Unlimited"}}</td>
           </tr>
           <tr>
             <th scope="row" class="bg-dark">VIEWS</th>

@@ -52,7 +52,7 @@ class LinksEditView(LoginRequiredMixin, generic.UpdateView):
     template_name = "links/edit.html"
     model = models.Link
     form_class = forms.LinkForm
-    success_url = reverse_lazy("links:detail:pk")
+    success_url = reverse_lazy("links:list")
 
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
