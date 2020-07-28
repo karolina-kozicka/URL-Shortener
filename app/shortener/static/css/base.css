@@ -50,11 +50,6 @@ body {
     padding: 50px;
 }
 
-.links-list{
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
 .button-panel{
     column-count: 2;
     column-gap: 4%;
@@ -76,16 +71,6 @@ body {
     padding-bottom: 50px;
 }
 
-.info{
-    font-family: "Special Elite", cursive;
-    font-size: 20px;
-    padding: auto;
-}
-
-.info th{
-    color: white;
-}
-
 .register{
   padding-top: 50px;
   padding-bottom: 50px;
@@ -100,101 +85,6 @@ body {
   justify-content: space-between;
   align-items: top;
   flex-wrap: wrap;
-}
-
-.double-td{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.info .green, a{
-  color: rgb(88, 189, 93);
-}
-
-.links-list table {
-  table-layout: fixed;
-  text-align: center;
-}
-
-.links-list table th{
-  padding: 5px;
-}
-
-.links-list table td{
-  vertical-align: middle;
-}
-
-.links-list table th.number{
-  width: 40px;
-}
-
-.links-list table th.url{
-  width: 20%;
-}
-
-td.url{
-  word-wrap: break-word;
-}
-
-table td.short-url{
-  word-wrap: break-word;
-  
-}
-
-.links-list table th.buttons{
-  width: 200px;
-}
-
-
-@media screen and (max-width: 767px) {
-  .links-list table {
-    border: 0;
-  }
-  
-  .links-list table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
-  .links-list table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
-  }
-  
-  .links-list table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: .8em;
-    text-align: right;
-  }
-
-  .links-list table td.number{
-    font-family: "Special Elite", cursive;
-    font-size: 1.0em;
-  }
-  
-  .links-list table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .links-list table td:last-child {
-    border-bottom: 0;
-  }
 }
 
 .small-button{
