@@ -4,6 +4,7 @@ footer {
   padding: 20px;
   color: #f5f5f5;
   font-family: "Special Elite", cursive;
+  text-align: center;
 }
 
 footer .copyright {
@@ -27,3 +28,10 @@ footer .back-to-top {
 footer .text-center.footer {
   margin-bottom: 0px;
 }
+
+@media screen and (max-width: 576px) {
+  footer .back-to-top {
+    position: relative;
+    right: auto;
+    bottom: auto;
+  }}
