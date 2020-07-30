@@ -1,16 +1,18 @@
 version: "3"
 
 services:
-  django:
+  django: &django
     build: .
     ports:
       - 8000:8000
     depends_on:
       - db
+      - redis-db
     links:
       - db
     environment:
       - DATABASE_URL=postgres://test:secret@db:5432/testdb
+      - REDIS_URL=redis://redis-db:6379/0
     volumes:
       - .:/app
     command: python app/manage.py runserver 0.0.0.0:8000
@@ -22,3 +24,19 @@ services:
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=secret
       - POSTGRES_DB=testdb
+  redis-db:
+    image: redis:6.0.6
+  celery-worker:
+    <<: *django
+    depends_on:
+      - db
+      - redis-db
+    ports: []
+    command: celery -A config.celery_app worker --workdir app -l INFO
+  celery-beat:
+    <<: *django
+    depends_on:
+      - db
+      - redis-db
+    ports: []
+    command: celery -A config.celery_app beat --workdir app -l INFO

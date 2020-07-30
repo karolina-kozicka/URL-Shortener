@@ -16,3 +16,7 @@ __pycache__/
 db.sqlite3
 
 .DS_Store
+
+# Celery
+celerybeat.pid
+celerybeat-schedule
