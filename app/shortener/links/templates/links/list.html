@@ -21,10 +21,11 @@
             </thead>
             <tbody>
               {% for link in links %}
-                <tr>
+              {{link.active}}
+                <tr {% if not link.active %}class="inactive"{% endif %}>
                   <td class="number">{{ forloop.counter }}</td>
                   <td class="url" data-label="URL">{{link.url}}</td>
-                  <td class="short-url" data-label="Short URL">{{ request.scheme }}://{{ domain }}/{{link.hash}}</td>
+                  <td class="short-url" data-label="Short URL">{{ request.scheme }}://{{ domain }}/{{link.hash}} {% if not link.active %}<i class="fas fa-history"></i>{% endif %}</td>
                   <td>
                     <button class="btn copy btn-dark small-button" data-clipboard-text="{{ request.scheme }}://{{ domain }}/{{link.hash}}">
                       <i class="far fa-copy"></i>

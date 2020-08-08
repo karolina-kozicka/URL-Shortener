@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import F
+from django.utils import timezone
 
 
 class Link(models.Model):
@@ -15,5 +16,6 @@ class Link(models.Model):
         self.views = F("views") + 1
         self.save()
 
-
-
+    @property
+    def active(self):
+        return self.valid_date == None or self.valid_date >= timezone.now()
