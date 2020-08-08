@@ -3,6 +3,9 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.crypto import get_random_string
+from django.utils import timezone
+from django.db.models import Q
+from django.http import Http404
 
 from . import models
 from . import forms
@@ -76,9 +79,14 @@ class LinksDeleteView(LoginRequiredMixin, generic.DeleteView):
 class RedirectionView(LoginRequiredMixin, generic.base.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         hash = kwargs.get("hash")
-        link = get_object_or_404(models.Link, hash=hash)
+
+        try:
+            link = models.Link.objects.filter(
+                Q(valid_date=None) | Q(valid_date__gte=timezone.now())
+            ).get(hash=hash)
+        except models.Link.DoesNotExist:
+            raise Http404
+
         link.increment_views()
         return link.url
 
-    def get_queryset(self):
-        return self.model.objects.filter(user=self.request.user)
