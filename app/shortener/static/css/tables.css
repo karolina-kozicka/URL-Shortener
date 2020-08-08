@@ -17,6 +17,10 @@ table-layout: fixed;
 text-align: center;
 }
 
+.links-list .inactive{
+    color: rgb(209, 209, 209);
+}
+
 .links-list table th{
 padding: 5px;
 }
