@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "django_registration",
+    "django_celery_beat",
     "crispy_forms",
     "shortener.links",
     "shortener.users",

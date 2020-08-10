@@ -39,4 +39,4 @@ services:
       - db
       - redis-db
     ports: []
-    command: celery -A config.celery_app beat --workdir app -l INFO
+    command: celery -A config.celery_app beat --workdir app -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
