@@ -160,3 +160,7 @@ CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-result_serializer
 CELERY_RESULT_SERIALIZER = "json"
+
+FIXTURE_DIRS = [
+    str(ROOT_DIR("config/fixtures")),
+]
