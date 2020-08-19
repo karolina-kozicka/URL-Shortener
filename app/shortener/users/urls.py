@@ -28,5 +28,5 @@ urlpatterns = [
         TemplateView.as_view(template_name="registration/registration_closed.html"),
         name="registration_disallowed",
     ),
-    path("account/edit/", views.EditView.as_view(), name="edit"),
+    # path("account/edit/", views.EditView.as_view(), name="edit"),
 ]

@@ -90,19 +90,19 @@ class ActivationView(django_registration_views.ActivationView):
         return super().get_success_url(*args, **kwargs)
 
 
-class EditView(LoginRequiredMixin, generic.UpdateView):
-    template_name = "users/edit.html"
-    model = User
-    fields = ("username",)
-    success_url = reverse_lazy("users:edit")
+# class EditView(LoginRequiredMixin, generic.UpdateView):
+#     template_name = "users/edit.html"
+#     model = User
+#     fields = (,)
+#     success_url = reverse_lazy("users:edit")
 
-    def get_object(self, queryset=None):
-        return self.request.user
+#     def get_object(self, queryset=None):
+#         return self.request.user
 
-    def form_valid(self, form):
-        messages.add_message(
-            self.request,
-            messages.SUCCESS,
-            "Account details have been changed successfully!",
-        )
-        return super().form_valid(form)
+#     def form_valid(self, form):
+#         messages.add_message(
+#             self.request,
+#             messages.SUCCESS,
+#             "Account details have been changed successfully!",
+#         )
+#         return super().form_valid(form)

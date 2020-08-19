@@ -23,8 +23,8 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{% url 'users:password_change' %}">Change password</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'users:edit'%}">Edit account details</a>
+              {% comment %} <div class="dropdown-divider"></div> {% endcomment %}
+              {% comment %} <a class="dropdown-item" href="{% url 'users:edit'%}">Edit account details</a> {% endcomment %}
             </div>
           </li>
           <li class="nav-item">
