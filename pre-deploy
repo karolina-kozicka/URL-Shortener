@@ -1,3 +1,4 @@
 #!/bin/bash
 
+python app/manage.py loaddata celery_beat
 python app/manage.py collectstatic --no-input
