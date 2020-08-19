@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load domain %}
+{% load static %}
 
 {% block content %}
   {% get_domain as domain %}
@@ -43,12 +44,22 @@
           <a href="{% url 'links:add' %}" class="btn btn-lg btn-block btn-outline-dark" role="button"><i class="fas fa-plus"></i></a>
         </div>
       {% else %}
-        <div class="info">
-          upps! 
-          <br>
-          It is incredible but you have no links.
-          <br>
-          You must change it!
+        <div class="home flex-container">
+          <div class="text flex-item">
+            <div class="text-grand">
+              upps! 
+              <br>
+              It is incredible but you have no links.
+              <br>
+              You must change it!
+            </div>
+            <div class="one-button">
+              <a href="{% url 'links:add' %}" class="btn btn-lg btn-block btn-outline-dark" role="button">Add your first link</i></a>
+            </div>
+          </div>
+          <div class="image flex-item">
+            <img class="image" src="{% static 'image/img1.png' %}" alt="Image"/>
+          </div>
         </div>
       {% endif %}
     </div>
