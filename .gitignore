@@ -20,3 +20,10 @@ db.sqlite3
 # Celery
 celerybeat.pid
 celerybeat-schedule
+
+# Envs
+.env.local
+.env.prod
+
+# Generated static files
+staticfiles

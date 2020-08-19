@@ -4,8 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-flake8 = "==3.7.9"
 black = "==19.10b0"
+flake8 = "==3.7.9"
 pylint-django = "==2.0.14"
 
 [packages]
@@ -19,6 +19,9 @@ dj-database-url = "==0.5.0"
 celery = "==4.4.6"
 django-celery-beat = "==2.0.0"
 redis = "==3.5.3"
+"django-anymail[mailgun]" = "==7.2.1"
+gunicorn = "==20.0.4"
+whitenoise = "==5.2.0"
 
 [requires]
 python_version = "3.8"
