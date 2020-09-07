@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-03 00:48+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: app/config/settings/base.py:181
+msgid "English"
+msgstr ""
+
+#: app/config/settings/base.py:182
+msgid "Polish"
+msgstr ""
+
+#: app/shortener/links/templates/links/add.html:10
+#: app/shortener/templates/header.html:14
+msgid "Add link"
+msgstr ""
+
+#: app/shortener/links/templates/links/delete.html:5
+#: app/shortener/links/templates/links/detail.html:35
+msgid "VALID DATE"
+msgstr ""
+
+#: app/shortener/links/templates/links/delete.html:9
+msgid "Delete link"
+msgstr ""
+
+#: app/shortener/links/templates/links/delete.html:14
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: app/shortener/links/templates/links/delete.html:16
+msgid "Delete"
+msgstr ""
+
+#: app/shortener/links/templates/links/delete.html:17
+msgid "Cancel"
+msgstr ""
+
+#: app/shortener/links/templates/links/detail.html:12
+msgid "Link"
+msgstr ""
+
+#: app/shortener/links/templates/links/detail.html:22
+msgid "SHORT URL"
+msgstr ""
+
+#: app/shortener/links/templates/links/detail.html:39
+msgid "VIEWS"
+msgstr ""
+
+#: app/shortener/links/templates/links/edit.html:10
+msgid "Edit link:"
+msgstr ""
+
+#: app/shortener/links/templates/links/list.html:12
+msgid " Yours links"
+msgstr ""
+
+#: app/shortener/links/templates/links/list.html:19
+msgid "URL"
+msgstr ""
+
+#: app/shortener/links/templates/links/list.html:20
+msgid "Short URL"
+msgstr ""
+
+#: app/shortener/links/templates/links/list.html:51
+msgid "upps! "
+msgstr ""
+
+#: app/shortener/links/templates/links/list.html:53
+msgid "It is incredible but you have no links."
+msgstr ""
+
+#: app/shortener/links/templates/links/list.html:55
+msgid "You must change it!"
+msgstr ""
+
+#: app/shortener/links/templates/links/list.html:58
+msgid "Add your first link"
+msgstr ""
+
+#: app/shortener/links/templates/links/list.html:62
+#: app/shortener/templates/home.html:15
+#: app/shortener/users/templates/registration/activation_failed.html:19
+#: app/shortener/users/templates/registration/registration_disallowed.html:19
+#: app/shortener/users/templates/registration/registration_form.html:20
+#: app/shortener/users/templates/users/login.html:23
+#: app/shortener/users/templates/users/password_reset.html:20
+#: app/shortener/users/templates/users/password_reset_confirm.html:20
+msgid "Image"
+msgstr ""
+
+#: app/shortener/templates/footer.html:5
+msgid "URL-Shortener - Shorter is easier!"
+msgstr ""
+
+#: app/shortener/templates/footer.html:7
+msgid "Back to top"
+msgstr ""
+
+#: app/shortener/templates/header.html:6
+msgid "Logo"
+msgstr ""
+
+#: app/shortener/templates/header.html:17
+msgid "Yours links"
+msgstr ""
+
+#: app/shortener/templates/header.html:26
+#: app/shortener/users/templates/users/password_change.html:8
+msgid "Change password"
+msgstr ""
+
+#: app/shortener/templates/header.html:34
+msgid "Logout"
+msgstr ""
+
+#: app/shortener/templates/header.html:40
+#: app/shortener/users/templates/users/login.html:10
+msgid "Login"
+msgstr ""
+
+#: app/shortener/users/templates/registration/activation_email_body.txt:6
+#, python-format
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"We have sent you this email in response to your request to registration on "
+"URL-Shortener. \n"
+"\n"
+"To active your account for URL-Shortener, please follow the link below:\n"
+"\n"
+"%(scheme)s://%(site)s%(activation_link)s\n"
+"Link is active for %(expiration_days)s days.\n"
+"\n"
+"If you did not make this request please ignore this email.\n"
+"\n"
+"Kindest regards ,\n"
+"URL-Shortener /Customer Service/\n"
+msgstr ""
+
+#: app/shortener/users/templates/registration/activation_email_subject.txt:3
+msgid "Activation account - URL-Shortener"
+msgstr ""
+
+#: app/shortener/users/templates/registration/activation_failed.html:10
+#: app/shortener/users/templates/registration/registration_disallowed.html:10
+#: app/shortener/users/templates/registration/registration_form.html:10
+msgid "Registration"
+msgstr ""
+
+#: app/shortener/users/templates/registration/activation_failed.html:12
+msgid ""
+"\n"
+"          \"Ups...\n"
+"          So sorry, account activation fails.\"\n"
+"          "
+msgstr ""
+
+#: app/shortener/users/templates/registration/registration_disallowed.html:12
+msgid ""
+"        \n"
+"          Registration of new user accounts is disabled becouse account-"
+"activation email was sent to the submitted email address.\n"
+"          If you don’t receive a message in 5 minutes, check the spam "
+"folder.\n"
+"          "
+msgstr ""
+
+#: app/shortener/users/templates/registration/registration_form.html:15
+#: app/shortener/users/templates/users/edit.html:14
+#: app/shortener/users/templates/users/login.html:15
+#: app/shortener/users/templates/users/password_change.html:14
+#: app/shortener/users/templates/users/password_reset.html:15
+#: app/shortener/users/templates/users/password_reset_confirm.html:15
+msgid "Submit"
+msgstr ""
+
+#: app/shortener/users/templates/users/edit.html:8
+msgid "Edit account"
+msgstr ""
+
+#: app/shortener/users/templates/users/login.html:19
+msgid "Reset password"
+msgstr ""
+
+#: app/shortener/users/templates/users/login.html:27
+msgid "Don't have an account?"
+msgstr ""
+
+#: app/shortener/users/templates/users/login.html:29
+msgid "Create account"
+msgstr ""
+
+#: app/shortener/users/templates/users/password_reset.html:10
+#: app/shortener/users/templates/users/password_reset_confirm.html:10
+msgid "Password reset"
+msgstr ""
+
+#: app/shortener/users/templates/users/password_reset_subject.txt:2
+msgid "Reset password - URL-Shortener"
+msgstr ""
+
+#: app/shortener/users/templates/users/reset_emial.html:6
+#, python-format
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"We have sent you this email in response to your request to reset your "
+"password on URL-Shortener. \n"
+"\n"
+"To reset your password for URL-Shortener, please follow the link below:\n"
+"\n"
+"%(protocol)s://%(domain)s%(reset_link)s\n"
+"\n"
+"If you did not make this request please ignore this email\n"
+"\n"
+"Kindest regards ,\n"
+"URL-Shortener /Customer Service/\n"
+msgstr ""

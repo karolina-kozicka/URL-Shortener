@@ -1,14 +1,21 @@
+{% load i18n %}
+
 {% autoescape off %}
+
+{% url 'users:password_reset_confirm' uidb64=uid token=token as reset_link %}
+{% blocktranslate %}
 Hello,
 
 We have sent you this email in response to your request to reset your password on URL-Shortener. 
 
 To reset your password for URL-Shortener, please follow the link below:
 
-{{ protocol }}://{{ domain }}{% url 'users:password_reset_confirm' uidb64=uid token=token %}
+{{ protocol }}://{{ domain }}{{ reset_link }}
 
 If you did not make this request please ignore this email
 
 Kindest regards ,
 URL-Shortener /Customer Service/
+{% endblocktranslate %}
+
 {% endautoescape %}

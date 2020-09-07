@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load domain %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
   {% get_domain as domain %}
@@ -8,15 +9,15 @@
     <div>
       {% if links %}
         <div class="text-center label">
-          <h2> Yours links </h2>
+          <h2>{% translate " Yours links" %}</h2>
         </div>
         <div class="links-list">
           <table class="table">
             <thead class="thead-dark info">
               <tr>
                 <th class="number" scope="col">#</th>
-                <th class="url"scope="col">URL</th>
-                <th class="short-url" scope="col">Short URL</th>
+                <th class="url"scope="col">{% translate "URL" %}</th>
+                <th class="short-url" scope="col">{% translate "Short URL" %}</th>
                 <th class="buttons" scope="col"></th>
               </tr>
             </thead>
@@ -25,8 +26,9 @@
               {{link.active}}
                 <tr {% if not link.active %}class="inactive"{% endif %}>
                   <td class="number">{{ forloop.counter }}</td>
-                  <td class="url" data-label="URL">{{link.url}}</td>
-                  <td class="short-url" data-label="Short URL">{{ request.scheme }}://{{ domain }}/{{link.hash}} {% if not link.active %}<i class="fas fa-history"></i>{% endif %}</td>
+                  <td class="url" data-label="{% translate "URL" %}">{{link.url}}</td>
+                  <td class="short-url" data-label="{% translate "Short URL" %}">{{ request.scheme }}://{{ domain }}/{{link.hash}}
+                  {% if not link.active %}<i class="fas fa-history"></i>{% endif %}</td>
                   <td>
                     <button class="btn copy btn-dark small-button" data-clipboard-text="{{ request.scheme }}://{{ domain }}/{{link.hash}}">
                       <i class="far fa-copy"></i>
@@ -47,18 +49,18 @@
         <div class="home flex-container">
           <div class="text flex-item">
             <div class="text-grand">
-              upps! 
+              {% translate "upps! " %}
               <br>
-              It is incredible but you have no links.
+              {% translate "It is incredible but you have no links." %}
               <br>
-              You must change it!
+              {% translate "You must change it!" %}
             </div>
             <div class="one-button">
-              <a href="{% url 'links:add' %}" class="btn btn-lg btn-block btn-outline-dark" role="button">Add your first link</i></a>
+              <a href="{% url 'links:add' %}" class="btn btn-lg btn-block btn-outline-dark" role="button">{% translate "Add your first link" %}</i></a>
             </div>
           </div>
           <div class="image flex-item">
-            <img class="image" src="{% static 'image/img1.png' %}" alt="Image"/>
+            <img class="image" src="{% static 'image/img1.png' %}" alt="{% translate "Image" %}"/>
           </div>
         </div>
       {% endif %}

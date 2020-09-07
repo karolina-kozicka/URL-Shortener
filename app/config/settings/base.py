@@ -7,6 +7,7 @@ import environ
 import dj_database_url
 
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 ROOT_DIR = environ.Path(__file__) - 3  # (app/config/settings/base.py - 3 = app/)
 APPS_DIR = ROOT_DIR.path("shortener")
@@ -97,6 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'django.middleware.locale.LocaleMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -173,3 +175,9 @@ SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
 EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default="[Shortener]")
 
+LOCALE_PATHS = [ROOT_DIR.path("locale")]
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('pl', _('Polish')),
+]

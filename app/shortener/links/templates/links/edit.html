@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
 {% block content %}
   <div class="back">
     <a href="{% url 'links:list'%}" class="btn btn-outline-dark small-button" role="button"><i class="fas button-icon fa-arrow-circle-left"></i></a>
   </div>
   <div class="text-center label">
-    <h2>Edit link: "{{link.hash}}"</h2>
+    <h2>{% translate "Edit link:" %} "{{link.hash}}"</h2>
   </div>
   {% crispy form %}
 {% endblock %}

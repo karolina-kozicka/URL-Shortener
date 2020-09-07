@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
 {% block content %}
   <div class="text-center label">
-    <h2>Delete link</h2> 
+    <h2>{% translate "Delete link" %}</h2> 
   </div>
   <form method="POST"> 
     {% csrf_token %}
     {{ form|crispy }}
-    <p class="text-center text-form"> Are you sure you want to delete "{{ link.hash }}"?</p>
+    <p class="text-center text-form"> {% translate "Are you sure you want to delete" %} "{{ link.hash }}"?</p>
     <div class="button-panel">
-      <input class="btn btn-lg btn-block btn-dark" type="submit" value="Delete">
-      <a href="{% url 'links:list'%}"class="btn btn-lg btn-block btn-outline-dark" role="button">Cancel</a>
+      <input class="btn btn-lg btn-block btn-dark" type="submit" value="{% translate "Delete" %}">
+      <a href="{% url 'links:list'%}"class="btn btn-lg btn-block btn-outline-dark" role="button">{% translate "Cancel" %}</a>
     </div>
   </form>
 {% endblock %}

@@ -22,6 +22,7 @@ from shortener.users.views import HomeView
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
     path("admin/", admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
     path("links/", include("shortener.links.urls")),
     path("user/", include("shortener.users.urls")),
     path("<str:hash>/", views.RedirectionView.as_view(), name="redirection"),

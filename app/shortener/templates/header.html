@@ -1,8 +1,9 @@
 {% load static %}
+{% load i18n %}
 
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="{% url 'home' %}"><img class="image-logo" src="{% static 'image/logo.svg' %}" alt="Logo" /></a>
+    <a class="navbar-brand" href="{% url 'home' %}"><img class="image-logo" src="{% static 'image/logo.svg' %}" alt="{% translate "Logo" %}"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,10 +11,10 @@
       {% if request.user.is_authenticated %}
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'links:add' %}">Add link</a>
+            <a class="nav-link" href="{% url 'links:add' %}">{% translate "Add link" %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'links:list' %}">Yours links</a>
+            <a class="nav-link" href="{% url 'links:list' %}">{% translate "Yours links" %}</a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -22,19 +23,19 @@
               <i class="fas fa-user-cog"></i>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'users:password_change' %}">Change password</a>
+              <a class="dropdown-item" href="{% url 'users:password_change' %}">{% translate "Change password" %}</a>
               {% comment %} <div class="dropdown-divider"></div> {% endcomment %}
-              {% comment %} <a class="dropdown-item" href="{% url 'users:edit'%}">Edit account details</a> {% endcomment %}
+              {% comment %} <a class="dropdown-item" href="{% url 'users:edit'%}">{% translate "Edit account details" %}</a> {% endcomment %}
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:logout' %}">Logout</a>
+            <a class="nav-link" href="{% url 'users:logout' %}">{% translate "Logout" %}</a>
           </li>
         </ul>
       {% else %}
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:login' %}">Login</a>
+            <a class="nav-link" href="{% url 'users:login' %}">{% translate "Login" %}</a>
           </li>
         </ul>
       {% endif%}  

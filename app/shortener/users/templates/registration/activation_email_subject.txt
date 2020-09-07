@@ -1,1 +1,3 @@
-Activation account - URL-Shortener
+{% load i18n %}
+
+{% translate "Activation account - URL-Shortener" %}
