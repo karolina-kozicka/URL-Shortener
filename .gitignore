@@ -27,3 +27,6 @@ celerybeat-schedule
 
 # Generated static files
 staticfiles
+
+# Translation
+*.mo

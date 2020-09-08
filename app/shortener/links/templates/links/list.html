@@ -9,7 +9,7 @@
     <div>
       {% if links %}
         <div class="text-center label">
-          <h2>{% translate " Yours links" %}</h2>
+          <h2>{% translate "Yours links" %}</h2>
         </div>
         <div class="links-list">
           <table class="table">
@@ -23,7 +23,6 @@
             </thead>
             <tbody>
               {% for link in links %}
-              {{link.active}}
                 <tr {% if not link.active %}class="inactive"{% endif %}>
                   <td class="number">{{ forloop.counter }}</td>
                   <td class="url" data-label="{% translate "URL" %}">{{link.url}}</td>

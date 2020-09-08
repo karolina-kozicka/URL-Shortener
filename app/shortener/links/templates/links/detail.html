@@ -3,6 +3,7 @@
 {% load i18n %}
 
 {% block content %}
+  {% translate "Unlimited" as unlimited %}
   {% get_domain as domain %}
   <div>
     <div class="back">
@@ -33,7 +34,7 @@
           </tr>
           <tr>
             <th scope="row" class="bg-dark">{% translate "VALID DATE" %}</th>
-            <td>{{link.valid_date|date:'d F Y H:i'|default:"{% translate "Unlimited" %}"}}</td>
+            <td>{{link.valid_date|date:'d F Y H:i'|default:unlimited }}</td>
           </tr>
           <tr>
             <th scope="row" class="bg-dark">{% translate "VIEWS" %}</th>

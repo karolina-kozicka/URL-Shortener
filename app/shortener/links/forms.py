@@ -3,6 +3,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div, Button
 from crispy_forms.bootstrap import FormActions
 from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
 from . import models
 
 
@@ -23,7 +24,7 @@ class LinkForm(forms.ModelForm):
             ),
             Div(
                 FormActions(
-                    Submit("save", "Save", css_class="btn btn-lg btn-block btn-dark ",),
+                    Submit("save", _("Save"), css_class="btn btn-lg btn-block btn-dark ",),
                 ),
                 css_class="one-button",
             ),
@@ -32,7 +33,7 @@ class LinkForm(forms.ModelForm):
     def clean_valid_date(self):
         valid_date = self.cleaned_data['valid_date']
         if valid_date and valid_date <= timezone.now():
-            raise forms.ValidationError("Valid date must be in the future.")
+            raise forms.ValidationError(_("Valid date must be in the future."))
         return valid_date
 
     def save(self, *args, **kwargs):
