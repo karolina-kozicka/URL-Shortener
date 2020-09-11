@@ -1,0 +1,19 @@
+{% load i18n %}
+
+{% get_language_info_list for LANGUAGES as languages %}
+
+{% if languages|length > 1 %}
+  <form id="lang-form"  action="{% url "set_language" %}" method="post" class="navbar-form navbar-right">
+    {% csrf_token %}
+    <div class="form-group">
+      <select name="language" class="selectpicker" data-width="fit" data-style="btn-success">
+        {% for language in languages %}
+          <option value="{{ language.code }}"
+            {% if language.code == LANGUAGE_CODE %}selected="selected"{% endif %} 
+            data-content="<span class='flag-icon flag-icon-{% if language.code == "en" %}gb{% else %}{{ language.code }}{% endif %}'></span> {{ language.code|upper }}">
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+  </form>
+{% endif %}

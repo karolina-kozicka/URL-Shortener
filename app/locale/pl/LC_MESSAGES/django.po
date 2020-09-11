@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 00:48+0200\n"
+"POT-Creation-Date: 2020-09-11 21:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,81 +22,107 @@ msgstr ""
 
 #: app/config/settings/base.py:181
 msgid "English"
-msgstr ""
+msgstr "Angielski"
 
 #: app/config/settings/base.py:182
 msgid "Polish"
-msgstr ""
+msgstr "Polski"
+
+#: app/shortener/links/forms.py:27
+msgid "Save"
+msgstr "Zapisz"
+
+#: app/shortener/links/forms.py:36
+msgid "Valid date must be in the future."
+msgstr "Data ważności musi być terminem w przyszłości"
+
+#: app/shortener/links/models.py:8
+msgid "Original URL"
+msgstr "Orginalny URL"
+
+#: app/shortener/links/models.py:9
+msgid "Hash"
+msgstr "Hash"
+
+#: app/shortener/links/models.py:13
+msgid "Valid date"
+msgstr "Data ważności"
 
 #: app/shortener/links/templates/links/add.html:10
 #: app/shortener/templates/header.html:14
 msgid "Add link"
-msgstr ""
+msgstr "Dodaj link"
 
-#: app/shortener/links/templates/links/delete.html:5
-#: app/shortener/links/templates/links/detail.html:35
-msgid "VALID DATE"
-msgstr ""
-
-#: app/shortener/links/templates/links/delete.html:9
+#: app/shortener/links/templates/links/delete.html:7
 msgid "Delete link"
-msgstr ""
+msgstr "Usuń link"
+
+#: app/shortener/links/templates/links/delete.html:12
+msgid "Are you sure you want to delete"
+msgstr "Czy na pewno chcesz usunąć"
 
 #: app/shortener/links/templates/links/delete.html:14
-msgid "Are you sure you want to delete"
-msgstr ""
-
-#: app/shortener/links/templates/links/delete.html:16
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
-#: app/shortener/links/templates/links/delete.html:17
+#: app/shortener/links/templates/links/delete.html:15
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
-#: app/shortener/links/templates/links/detail.html:12
+#: app/shortener/links/templates/links/detail.html:7
+msgid "Unlimited"
+msgstr "Bez limitu"
+
+#: app/shortener/links/templates/links/detail.html:14
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
-#: app/shortener/links/templates/links/detail.html:22
+#: app/shortener/links/templates/links/detail.html:24
 msgid "SHORT URL"
-msgstr ""
+msgstr "KRÓTKI URL"
 
-#: app/shortener/links/templates/links/detail.html:39
+#: app/shortener/links/templates/links/detail.html:37
+msgid "VALID DATE"
+msgstr "DATA WAŻNOŚĆ"
+
+#: app/shortener/links/templates/links/detail.html:41
 msgid "VIEWS"
-msgstr ""
+msgstr "OGLĄDAJĄCY"
 
 #: app/shortener/links/templates/links/edit.html:10
 msgid "Edit link:"
-msgstr ""
+msgstr "Edytuj link:"
 
 #: app/shortener/links/templates/links/list.html:12
-msgid " Yours links"
-msgstr ""
+#: app/shortener/templates/header.html:17
+msgid "Yours links"
+msgstr "Twoje linki"
 
 #: app/shortener/links/templates/links/list.html:19
+#: app/shortener/links/templates/links/list.html:28
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: app/shortener/links/templates/links/list.html:20
+#: app/shortener/links/templates/links/list.html:29
 msgid "Short URL"
-msgstr ""
+msgstr "Krótki URL"
 
 #: app/shortener/links/templates/links/list.html:51
 msgid "upps! "
-msgstr ""
+msgstr "upps! "
 
 #: app/shortener/links/templates/links/list.html:53
 msgid "It is incredible but you have no links."
-msgstr ""
+msgstr "To nieprawdopodobne, ale nie masz żadnych linków"
 
 #: app/shortener/links/templates/links/list.html:55
 msgid "You must change it!"
-msgstr ""
+msgstr "Musisz to zmienić!"
 
 #: app/shortener/links/templates/links/list.html:58
 msgid "Add your first link"
-msgstr ""
+msgstr "Dodaj swój pierwszy link"
 
 #: app/shortener/links/templates/links/list.html:62
 #: app/shortener/templates/home.html:15
@@ -107,37 +133,41 @@ msgstr ""
 #: app/shortener/users/templates/users/password_reset.html:20
 #: app/shortener/users/templates/users/password_reset_confirm.html:20
 msgid "Image"
-msgstr ""
+msgstr "Obraz"
 
 #: app/shortener/templates/footer.html:5
 msgid "URL-Shortener - Shorter is easier!"
-msgstr ""
+msgstr "URL-Shortener - Krócej jest łatwiej!"
 
 #: app/shortener/templates/footer.html:7
 msgid "Back to top"
-msgstr ""
+msgstr "Powrót do początku strony"
 
 #: app/shortener/templates/header.html:6
 msgid "Logo"
-msgstr ""
-
-#: app/shortener/templates/header.html:17
-msgid "Yours links"
-msgstr ""
+msgstr "Logo"
 
 #: app/shortener/templates/header.html:26
 #: app/shortener/users/templates/users/password_change.html:8
 msgid "Change password"
-msgstr ""
+msgstr "Zmień hasło"
 
 #: app/shortener/templates/header.html:34
 msgid "Logout"
-msgstr ""
+msgstr "Wyloguj"
 
 #: app/shortener/templates/header.html:40
 #: app/shortener/users/templates/users/login.html:10
 msgid "Login"
-msgstr ""
+msgstr "Logowanie"
+
+#: app/shortener/templates/home.html:9
+msgid "Come on!"
+msgstr "Zacznij korzystać"
+
+#: app/shortener/templates/home.html:11
+msgid "Use URL-Shortener"
+msgstr "z URL-Shortener!"
 
 #: app/shortener/users/templates/registration/activation_email_body.txt:6
 #, python-format
@@ -158,16 +188,31 @@ msgid ""
 "Kindest regards ,\n"
 "URL-Shortener /Customer Service/\n"
 msgstr ""
+"\n"
+"Cześć,\n"
+"\n"
+"Wysłaliśmy do Ciebie tę wiadomość e-mail w odpowiedzi na Twoją prośbę o "
+"aktywację konta na stronie URL-Shortener. \n"
+"\n"
+"Aby aktywować konto na URL-Shortener, kliknij poniższy link:\n"
+"\n"
+"%(scheme)s://%(site)s%(activation_link)s\n"
+"Link aktywacyjny jest ważny %(expiration_days)s dni.\n"
+"\n"
+"Jeśli nie wysłałeś tej prośby, proszę, zignoruj tego e-maila \n"
+"\n"
+"Pozdrawiamy, \n"
+"URL-Shortener /Obsługa klienta/ \n"
 
 #: app/shortener/users/templates/registration/activation_email_subject.txt:3
 msgid "Activation account - URL-Shortener"
-msgstr ""
+msgstr "Aktywacja konta - URL-Shortener"
 
 #: app/shortener/users/templates/registration/activation_failed.html:10
 #: app/shortener/users/templates/registration/registration_disallowed.html:10
 #: app/shortener/users/templates/registration/registration_form.html:10
 msgid "Registration"
-msgstr ""
+msgstr "Rejestracja"
 
 #: app/shortener/users/templates/registration/activation_failed.html:12
 msgid ""
@@ -176,6 +221,10 @@ msgid ""
 "          So sorry, account activation fails.\"\n"
 "          "
 msgstr ""
+"\n"
+"          \"Ups...\n"
+"          Przepraszamy, coś poszło nie tak z aktywacją konta.\"\n"
+"          "
 
 #: app/shortener/users/templates/registration/registration_disallowed.html:12
 msgid ""
@@ -186,6 +235,11 @@ msgid ""
 "folder.\n"
 "          "
 msgstr ""
+"        \n"
+" Rejestracja nowego konta jest nie dostępna, ponieważ na podane przez Ciebie "
+"adres już został wysłany mail aktywacyjny.\n"
+" Jeśli w ciągu 5 minut nie otrzymasz wiadomości, sprawdź, proszę folder "
+"spam.          "
 
 #: app/shortener/users/templates/registration/registration_form.html:15
 #: app/shortener/users/templates/users/edit.html:14
@@ -194,32 +248,32 @@ msgstr ""
 #: app/shortener/users/templates/users/password_reset.html:15
 #: app/shortener/users/templates/users/password_reset_confirm.html:15
 msgid "Submit"
-msgstr ""
+msgstr "Zapisz"
 
 #: app/shortener/users/templates/users/edit.html:8
 msgid "Edit account"
-msgstr ""
+msgstr "Edytuj konto"
 
 #: app/shortener/users/templates/users/login.html:19
 msgid "Reset password"
-msgstr ""
+msgstr "Resetuj hasło"
 
 #: app/shortener/users/templates/users/login.html:27
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Nie masz jeszcze konta?"
 
 #: app/shortener/users/templates/users/login.html:29
 msgid "Create account"
-msgstr ""
+msgstr "Załóż konto"
 
 #: app/shortener/users/templates/users/password_reset.html:10
 #: app/shortener/users/templates/users/password_reset_confirm.html:10
 msgid "Password reset"
-msgstr ""
+msgstr "Resetowanie hasła"
 
 #: app/shortener/users/templates/users/password_reset_subject.txt:2
 msgid "Reset password - URL-Shortener"
-msgstr ""
+msgstr "Resetowanie hasła - URL-Shortener"
 
 #: app/shortener/users/templates/users/reset_emial.html:6
 #, python-format
@@ -239,3 +293,31 @@ msgid ""
 "Kindest regards ,\n"
 "URL-Shortener /Customer Service/\n"
 msgstr ""
+"\n"
+"Cześć, \n"
+"\n"
+"Wysłaliśmy do Ciebie tę wiadomość e-mail w odpowiedzi na Twoją prośbę o "
+"zresetowanie hasła do URL-Shortener. \n"
+"\n"
+"Aby zresetować hasło do URL-Shortener, kliknij w poniższy link: \n"
+"\n"
+"%(protocol)s://%(domain)s%(reset_link)s\n"
+"\n"
+"Jeśli nie wysłałeś tej prośby, proszę zignoruj tego e-maila \n"
+"\n"
+"Pozdrawiamy, \n"
+"URL-Shortener /Obsługa klienta/ \n"
+
+#~ msgid ""
+#~ "\n"
+#~ "        Come on!\n"
+#~ "        Use URL-Shortener\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "        Zacznij korzystać\n"
+#~ "        z URL-Shortener!\n"
+#~ "        "
+
+#~ msgid " Yours links"
+#~ msgstr "Twoje linki"
