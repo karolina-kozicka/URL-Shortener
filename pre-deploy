@@ -2,3 +2,4 @@
 
 python app/manage.py loaddata celery_beat
 python app/manage.py collectstatic --no-input
+python app/manage.py compilemessages
