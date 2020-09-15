@@ -28,6 +28,5 @@ class Link(models.Model):
     @classmethod
     def delete_expired_links(cls):
         cls.objects.filter(
-            valid_date__lte=timezone.now() + EXPIRED_LINKS_KEEP_TIME
+            valid_date__lte=timezone.now() - EXPIRED_LINKS_KEEP_TIME
         ).delete()
-        cls.objects.filter(valid_date < timezone.now()).delete()
