@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.crypto import get_random_string
 from django.utils import timezone
 from django.db.models import Q
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 
 from . import models
 from . import forms
@@ -76,17 +76,29 @@ class LinksDeleteView(LoginRequiredMixin, generic.DeleteView):
         return self.model.objects.filter(user=self.request.user)
 
 
-class RedirectionView(LoginRequiredMixin, generic.base.RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
-        hash = kwargs.get("hash")
+class OpenLinkView(generic.FormView):
+    template_name = "links/password.html"
+    form_class = forms.PasswordForm
 
+    def form_valid(self, form):
+        return HttpResponseRedirect(self.link.url)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs["link"] = self.link
+        return kwargs
+
+    def dispatch(self, request, *args, **kwargs):
         try:
-            link = models.Link.objects.filter(
+            _hash = self.kwargs["hash"]
+            self.link = models.Link.objects.filter(
                 Q(valid_date=None) | Q(valid_date__gte=timezone.now())
-            ).get(hash=hash)
+            ).get(hash=_hash)
         except models.Link.DoesNotExist:
             raise Http404
 
-        link.increment_views()
-        return link.url
+        if not self.link.password:
+            return HttpResponseRedirect(self.link.url)
+        
+        return super().dispatch(request, *args, **kwargs)
 

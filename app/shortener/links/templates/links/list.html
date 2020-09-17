@@ -27,6 +27,7 @@
                   <td class="number">{{ forloop.counter }}</td>
                   <td class="url" data-label="{% translate "URL" %}">{{link.url}}</td>
                   <td class="short-url" data-label="{% translate "Short URL" %}">{{ request.scheme }}://{{ domain }}/{{link.hash}}
+                  {% if link.password %}<i class="fas fa-lock"></i>{% endif %}
                   {% if not link.active %}<i class="fas fa-history"></i>{% endif %}</td>
                   <td>
                     <button class="btn copy btn-dark small-button" data-clipboard-text="{{ request.scheme }}://{{ domain }}/{{link.hash}}">

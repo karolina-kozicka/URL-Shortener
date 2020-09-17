@@ -25,5 +25,5 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path("links/", include("shortener.links.urls")),
     path("user/", include("shortener.users.urls")),
-    path("<str:hash>/", views.RedirectionView.as_view(), name="redirection"),
+    path("<str:hash>/", views.OpenLinkView.as_view(), name="open"),
 ]

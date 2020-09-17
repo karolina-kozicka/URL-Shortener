@@ -7,7 +7,7 @@ from config.shortener import EXPIRED_LINKS_KEEP_TIME
 
 
 class Link(models.Model):
-    url = models.CharField(verbose_name=_("Original URL"), max_length=1024)
+    url = models.URLField(verbose_name=_("URL"), max_length=1024)
     hash = models.CharField(verbose_name=_("Hash"), max_length=24, unique=True)
     user = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="links"
@@ -16,6 +16,7 @@ class Link(models.Model):
         verbose_name=_("Valid date"), null=True, blank=True
     )
     views = models.BigIntegerField(default=0)
+    password = models.CharField(verbose_name=_("Password"), max_length=16, default="", blank=True)
 
     def increment_views(self):
         self.views = F("views") + 1

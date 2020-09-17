@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 21:27+0200\n"
+"POT-Creation-Date: 2020-09-18 00:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,28 +26,38 @@ msgstr ""
 msgid "Polish"
 msgstr ""
 
-#: app/shortener/links/forms.py:27
+#: app/shortener/links/forms.py:28
 msgid "Save"
 msgstr ""
 
-#: app/shortener/links/forms.py:36
+#: app/shortener/links/forms.py:38
 msgid "Valid date must be in the future."
 msgstr ""
 
-#: app/shortener/links/models.py:8
-msgid "Original URL"
+#: app/shortener/links/forms.py:49 app/shortener/links/models.py:19
+msgid "Password"
 msgstr ""
 
-#: app/shortener/links/models.py:9
+#: app/shortener/links/forms.py:61
+msgid "Password incorrect"
+msgstr ""
+
+#: app/shortener/links/models.py:10
+#: app/shortener/links/templates/links/list.html:19
+#: app/shortener/links/templates/links/list.html:28
+msgid "URL"
+msgstr ""
+
+#: app/shortener/links/models.py:11
 msgid "Hash"
 msgstr ""
 
-#: app/shortener/links/models.py:13
+#: app/shortener/links/models.py:16
 msgid "Valid date"
 msgstr ""
 
 #: app/shortener/links/templates/links/add.html:10
-#: app/shortener/templates/header.html:30
+#: app/shortener/templates/header.html:14
 msgid "Add link"
 msgstr ""
 
@@ -87,18 +97,17 @@ msgstr ""
 msgid "VIEWS"
 msgstr ""
 
+#: app/shortener/links/templates/links/detail.html:45
+msgid "PASSWORD"
+msgstr ""
+
 #: app/shortener/links/templates/links/edit.html:10
 msgid "Edit link:"
 msgstr ""
 
 #: app/shortener/links/templates/links/list.html:12
-#: app/shortener/templates/header.html:33
+#: app/shortener/templates/header.html:17
 msgid "Yours links"
-msgstr ""
-
-#: app/shortener/links/templates/links/list.html:19
-#: app/shortener/links/templates/links/list.html:28
-msgid "URL"
 msgstr ""
 
 #: app/shortener/links/templates/links/list.html:20
@@ -106,23 +115,23 @@ msgstr ""
 msgid "Short URL"
 msgstr ""
 
-#: app/shortener/links/templates/links/list.html:51
+#: app/shortener/links/templates/links/list.html:52
 msgid "upps! "
 msgstr ""
 
-#: app/shortener/links/templates/links/list.html:53
+#: app/shortener/links/templates/links/list.html:54
 msgid "It is incredible but you have no links."
 msgstr ""
 
-#: app/shortener/links/templates/links/list.html:55
+#: app/shortener/links/templates/links/list.html:56
 msgid "You must change it!"
 msgstr ""
 
-#: app/shortener/links/templates/links/list.html:58
+#: app/shortener/links/templates/links/list.html:59
 msgid "Add your first link"
 msgstr ""
 
-#: app/shortener/links/templates/links/list.html:62
+#: app/shortener/links/templates/links/list.html:63
 #: app/shortener/templates/home.html:15
 #: app/shortener/users/templates/registration/activation_failed.html:19
 #: app/shortener/users/templates/registration/registration_disallowed.html:19
@@ -131,6 +140,10 @@ msgstr ""
 #: app/shortener/users/templates/users/password_reset.html:20
 #: app/shortener/users/templates/users/password_reset_confirm.html:20
 msgid "Image"
+msgstr ""
+
+#: app/shortener/links/templates/links/password.html:7
+msgid "Password protected link"
 msgstr ""
 
 #: app/shortener/templates/footer.html:5
@@ -145,16 +158,16 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: app/shortener/templates/header.html:42
+#: app/shortener/templates/header.html:31
 #: app/shortener/users/templates/users/password_change.html:8
 msgid "Change password"
 msgstr ""
 
-#: app/shortener/templates/header.html:50
+#: app/shortener/templates/header.html:39
 msgid "Logout"
 msgstr ""
 
-#: app/shortener/templates/header.html:56
+#: app/shortener/templates/header.html:43
 #: app/shortener/users/templates/users/login.html:10
 msgid "Login"
 msgstr ""

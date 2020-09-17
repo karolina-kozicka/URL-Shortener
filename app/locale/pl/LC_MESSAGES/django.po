@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 21:26+0200\n"
+"POT-Creation-Date: 2020-09-18 00:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,31 +20,41 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: app/config/settings/base.py:181
+#: app/config/settings/base.py:182
 msgid "English"
 msgstr "Angielski"
 
-#: app/config/settings/base.py:182
+#: app/config/settings/base.py:183
 msgid "Polish"
 msgstr "Polski"
 
-#: app/shortener/links/forms.py:27
+#: app/shortener/links/forms.py:28
 msgid "Save"
 msgstr "Zapisz"
 
-#: app/shortener/links/forms.py:36
+#: app/shortener/links/forms.py:38
 msgid "Valid date must be in the future."
-msgstr "Data ważności musi być terminem w przyszłości"
+msgstr "Data ważności musi być w przyszłości"
 
-#: app/shortener/links/models.py:8
-msgid "Original URL"
-msgstr "Orginalny URL"
+#: app/shortener/links/forms.py:49 app/shortener/links/models.py:19
+msgid "Password"
+msgstr "Hasło"
 
-#: app/shortener/links/models.py:9
+#: app/shortener/links/forms.py:61
+msgid "Password incorrect"
+msgstr "Nieprawidłowe hasło"
+
+#: app/shortener/links/models.py:10
+#: app/shortener/links/templates/links/list.html:19
+#: app/shortener/links/templates/links/list.html:28
+msgid "URL"
+msgstr "URL"
+
+#: app/shortener/links/models.py:11
 msgid "Hash"
 msgstr "Hash"
 
-#: app/shortener/links/models.py:13
+#: app/shortener/links/models.py:16
 msgid "Valid date"
 msgstr "Data ważności"
 
@@ -69,25 +79,29 @@ msgstr "Usuń"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: app/shortener/links/templates/links/detail.html:7
+#: app/shortener/links/templates/links/detail.html:6
 msgid "Unlimited"
 msgstr "Bez limitu"
 
-#: app/shortener/links/templates/links/detail.html:14
+#: app/shortener/links/templates/links/detail.html:13
 msgid "Link"
 msgstr "Link"
 
-#: app/shortener/links/templates/links/detail.html:24
+#: app/shortener/links/templates/links/detail.html:23
 msgid "SHORT URL"
-msgstr "KRÓTKI URL"
+msgstr "SKRÓCONY URL"
 
-#: app/shortener/links/templates/links/detail.html:37
+#: app/shortener/links/templates/links/detail.html:36
 msgid "VALID DATE"
-msgstr "DATA WAŻNOŚĆ"
+msgstr "DATA WAŻNOŚCI"
 
-#: app/shortener/links/templates/links/detail.html:41
+#: app/shortener/links/templates/links/detail.html:40
 msgid "VIEWS"
-msgstr "OGLĄDAJĄCY"
+msgstr "LICZBA WEJŚĆ"
+
+#: app/shortener/links/templates/links/detail.html:45
+msgid "PASSWORD"
+msgstr "HASŁO"
 
 #: app/shortener/links/templates/links/edit.html:10
 msgid "Edit link:"
@@ -98,33 +112,28 @@ msgstr "Edytuj link:"
 msgid "Yours links"
 msgstr "Twoje linki"
 
-#: app/shortener/links/templates/links/list.html:19
-#: app/shortener/links/templates/links/list.html:28
-msgid "URL"
-msgstr "URL"
-
 #: app/shortener/links/templates/links/list.html:20
 #: app/shortener/links/templates/links/list.html:29
 msgid "Short URL"
-msgstr "Krótki URL"
+msgstr "Skrócony URL"
 
-#: app/shortener/links/templates/links/list.html:51
+#: app/shortener/links/templates/links/list.html:52
 msgid "upps! "
 msgstr "upps! "
 
-#: app/shortener/links/templates/links/list.html:53
+#: app/shortener/links/templates/links/list.html:54
 msgid "It is incredible but you have no links."
-msgstr "To nieprawdopodobne, ale nie masz żadnych linków"
+msgstr "To nieprawdopodobne, ale nie masz żadnych linków."
 
-#: app/shortener/links/templates/links/list.html:55
+#: app/shortener/links/templates/links/list.html:56
 msgid "You must change it!"
 msgstr "Musisz to zmienić!"
 
-#: app/shortener/links/templates/links/list.html:58
+#: app/shortener/links/templates/links/list.html:59
 msgid "Add your first link"
 msgstr "Dodaj swój pierwszy link"
 
-#: app/shortener/links/templates/links/list.html:62
+#: app/shortener/links/templates/links/list.html:63
 #: app/shortener/templates/home.html:15
 #: app/shortener/users/templates/registration/activation_failed.html:19
 #: app/shortener/users/templates/registration/registration_disallowed.html:19
@@ -134,6 +143,10 @@ msgstr "Dodaj swój pierwszy link"
 #: app/shortener/users/templates/users/password_reset_confirm.html:20
 msgid "Image"
 msgstr "Obraz"
+
+#: app/shortener/links/templates/links/password.html:7
+msgid "Password protected link"
+msgstr "Link zablokowany hasłem"
 
 #: app/shortener/templates/footer.html:5
 msgid "URL-Shortener - Shorter is easier!"
@@ -147,19 +160,19 @@ msgstr "Powrót do początku strony"
 msgid "Logo"
 msgstr "Logo"
 
-#: app/shortener/templates/header.html:26
+#: app/shortener/templates/header.html:31
 #: app/shortener/users/templates/users/password_change.html:8
 msgid "Change password"
 msgstr "Zmień hasło"
 
-#: app/shortener/templates/header.html:34
+#: app/shortener/templates/header.html:39
 msgid "Logout"
 msgstr "Wyloguj"
 
-#: app/shortener/templates/header.html:40
+#: app/shortener/templates/header.html:43
 #: app/shortener/users/templates/users/login.html:10
 msgid "Login"
-msgstr "Logowanie"
+msgstr "Zaloguj"
 
 #: app/shortener/templates/home.html:9
 msgid "Come on!"
@@ -236,7 +249,7 @@ msgid ""
 "          "
 msgstr ""
 "        \n"
-" Rejestracja nowego konta jest nie dostępna, ponieważ na podane przez Ciebie "
+" Rejestracja nowego konta jest nie dostępna, ponieważ na podany przez Ciebie "
 "adres już został wysłany mail aktywacyjny.\n"
 " Jeśli w ciągu 5 minut nie otrzymasz wiadomości, sprawdź, proszę folder "
 "spam.          "
@@ -248,7 +261,7 @@ msgstr ""
 #: app/shortener/users/templates/users/password_reset.html:15
 #: app/shortener/users/templates/users/password_reset_confirm.html:15
 msgid "Submit"
-msgstr "Zapisz"
+msgstr "Wyślij"
 
 #: app/shortener/users/templates/users/edit.html:8
 msgid "Edit account"
@@ -307,17 +320,3 @@ msgstr ""
 "\n"
 "Pozdrawiamy, \n"
 "URL-Shortener /Obsługa klienta/ \n"
-
-#~ msgid ""
-#~ "\n"
-#~ "        Come on!\n"
-#~ "        Use URL-Shortener\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "        Zacznij korzystać\n"
-#~ "        z URL-Shortener!\n"
-#~ "        "
-
-#~ msgid " Yours links"
-#~ msgstr "Twoje linki"

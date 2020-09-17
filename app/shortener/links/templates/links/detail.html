@@ -40,6 +40,12 @@
             <th scope="row" class="bg-dark">{% translate "VIEWS" %}</th>
             <td>{{link.views}}</td>
           </tr>
+          {% if link.password %}
+            <tr>
+              <th scope="row" class="bg-dark">{% translate "PASSWORD" %}</th>
+              <td>{{link.password}}</td>
+            </tr>
+          {% endif %}
         </tbody>
       </table>
     </div>
