@@ -81,6 +81,7 @@ class OpenLinkView(generic.FormView):
     form_class = forms.PasswordForm
 
     def form_valid(self, form):
+        self.link.increment_views()
         return HttpResponseRedirect(self.link.url)
 
     def get_form_kwargs(self):
@@ -98,6 +99,7 @@ class OpenLinkView(generic.FormView):
             raise Http404
 
         if not self.link.password:
+            self.link.increment_views()
             return HttpResponseRedirect(self.link.url)
         
         return super().dispatch(request, *args, **kwargs)
