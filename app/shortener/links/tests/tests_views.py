@@ -1,7 +1,9 @@
 from django.test import TestCase
 from django.urls import reverse
+from django.utils import timezone
+import datetime
 
-from .. import views, forms
+from .. import views, forms, models
 from ..factories import LinkFactory
 from shortener.users.factories import UserFactory
 from shortener.users.views import LoginView
@@ -77,6 +79,201 @@ class LinksDetailViewTests(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context["link"], link)
+
+
+class LinksAddViewTests(TestCase):
+    def test_redirects_to_login_if_user_is_not_authenticated(self):
+        url = reverse("links:add")
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 302)
+        response = self.client.get(url, follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.resolver_match.func.__name__, LoginView.as_view().__name__
+        )
+
+    def test_uses_add_view(self):
+        response = self.client.get(reverse("links:add"))
+        self.assertEqual(
+            response.resolver_match.func.__name__,
+            views.LinksAddView.as_view().__name__,
+        )
+
+    def test_renders_add_template(self):
+        user = UserFactory.create()
+        self.client.force_login(user)
+        url = reverse("links:add")
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.template_name[0], "links/add.html")
+
+    def test_adds_link(self):
+        user = UserFactory.create()
+        self.client.force_login(user)
+        test_hash = "test_hash"
+        data = {
+            "url": "https://url-test.com/",
+            "hash": test_hash,
+        }
+        url = reverse("links:add")
+
+        response = self.client.post(url, data, follow=True)
+        self.assertEqual(
+            response.resolver_match.func.__name__,
+            views.LinksListView.as_view().__name__,
+        )
+        self.assertTrue(
+            models.Link.objects.filter(
+                hash=test_hash, user=user, valid_date__isnull=True
+            ).exists()
+        )
+
+    def test_adds_link_with_password(self):
+        user = UserFactory.create()
+        self.client.force_login(user)
+        test_hash = "test_hash"
+        link_password = "password"
+        data = {
+            "url": "https://url-test.com/",
+            "hash": test_hash,
+            "password": link_password,
+        }
+        url = reverse("links:add")
+
+        response = self.client.post(url, data, follow=True)
+        self.assertEqual(
+            response.resolver_match.func.__name__,
+            views.LinksListView.as_view().__name__,
+        )
+        self.assertTrue(
+            models.Link.objects.filter(
+                hash=test_hash,
+                user=user,
+                password=link_password,
+                valid_date__isnull=True,
+            ).exists()
+        )
+
+    def test_adds_link_with_valid_date(self):
+        user = UserFactory.create()
+        self.client.force_login(user)
+        test_hash = "test_hash"
+        valid_date = timezone.now() + datetime.timedelta(days=15)
+        data = {
+            "url": "https://url-test.com/",
+            "hash": test_hash,
+            "valid_date": valid_date.strftime("%Y-%m-%d %H:%M"),
+        }
+        url = reverse("links:add")
+
+        response = self.client.post(url, data, follow=True)
+        self.assertEqual(
+            response.resolver_match.func.__name__,
+            views.LinksListView.as_view().__name__,
+        )
+        self.assertTrue(
+            models.Link.objects.filter(
+                hash=test_hash, user=user, valid_date=valid_date.strftime("%Y-%m-%d %H:%M")
+            ).exists()
+        )
+
+
+class LinksEditViewTests(TestCase):
+    def test_redirects_to_login_if_user_is_not_authenticated(self):
+        url = reverse("links:edit", args=(1,))
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 302)
+        response = self.client.get(url, follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.resolver_match.func.__name__, LoginView.as_view().__name__
+        )
+
+    def test_uses_edit_view(self):
+        url = reverse("links:edit", args=(1,))
+        response = self.client.get(url)
+        self.assertEqual(
+            response.resolver_match.func.__name__,
+            views.LinksEditView.as_view().__name__,
+        )
+
+    def test_renders_edit_template(self):
+        user = UserFactory.create()
+        self.client.force_login(user)
+        link = LinkFactory.create(user=user)
+        url = reverse("links:edit", args=(link.id,))
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.template_name[0], "links/edit.html")
+
+    def test_edits_link(self):
+        user = UserFactory.create()
+        self.client.force_login(user)
+        test_hash = "test_hash"
+        new_test_hash = "new_test_hash"
+        link = LinkFactory.create(hash=test_hash, user=user)
+        url = reverse("links:edit", args=(link.id,))
+        data = {
+            "url": "https://url-test.com/",
+            "hash": new_test_hash,
+            "password": "link_password",
+        }
+        response = self.client.post(url, data, follow=True)
+        self.assertEqual(
+            response.resolver_match.func.__name__,
+            views.LinksListView.as_view().__name__,
+        )
+        self.assertTrue(
+            models.Link.objects.filter(hash=new_test_hash, user=user,).exists()
+        )
+        self.assertFalse(
+            models.Link.objects.filter(hash=test_hash, user=user,).exists()
+        )
+
+
+class LinksDeleteViewTests(TestCase):
+    def test_redirects_to_login_if_user_is_not_authenticated(self):
+        url = reverse("links:delete", args=(1,))
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 302)
+        response = self.client.get(url, follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.resolver_match.func.__name__, LoginView.as_view().__name__
+        )
+
+    def test_uses_delete_view(self):
+        url = reverse("links:delete", args=(1,))
+        response = self.client.get(url)
+        self.assertEqual(
+            response.resolver_match.func.__name__,
+            views.LinksDeleteView.as_view().__name__,
+        )
+
+    def test_renders_delete_template(self):
+        user = UserFactory.create()
+        self.client.force_login(user)
+        link = LinkFactory.create(user=user)
+        url = reverse("links:delete", args=(link.id,))
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.template_name[0], "links/delete.html")
+
+    def test_deletes_link(self):
+        user = UserFactory.create()
+        self.client.force_login(user)
+        test_hash = "test_hash"
+        link = LinkFactory.create(hash=test_hash, user=user)
+        url = reverse("links:delete", args=(link.id,))
+        response = self.client.post(url, follow=True)
+        self.assertEqual(
+            response.resolver_match.func.__name__,
+            views.LinksListView.as_view().__name__,
+        )
+        self.assertFalse(
+            models.Link.objects.filter(hash=test_hash, user=user,).exists()
+        )
+
 
 
 class OpenLinkViewTests(TestCase):
