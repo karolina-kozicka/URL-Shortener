@@ -1,0 +1,52 @@
+version: 2.1
+
+executors:
+  shortener-executor:
+    docker:
+      - image: circleci/python:3.8.2
+        environment:
+          PIPENV_VENV_IN_PROJECT: true
+          DATABASE_URL: postgres://test:secret@127.0.0.1:5432/testdb?sslmode=disable
+          REDIS_URL: redis://127.0.0.1:6379/0
+      - image: circleci/postgres:12.3
+        environment:
+            POSTGRES_USER: test
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: testdb
+      - image: circleci/redis:6-alpine3.12
+    working_directory: ~/shortener
+
+jobs:
+  build:
+    executor: shortener-executor
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            sudo pip install pipenv
+            pipenv install
+      - persist_to_workspace:
+            root: .
+            paths:
+                - .
+  test:
+    executor: shortener-executor
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/shortener
+      - run:
+          name: Test code with coverage
+          command: |
+            pipenv run python app/manage.py test shortener
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+
