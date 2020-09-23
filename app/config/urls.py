@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from shortener.links import views
-from shortener.users.views import HomeView
+from shortener.users.views import HomeView, trigger_error
 
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
@@ -25,5 +25,6 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path("links/", include("shortener.links.urls")),
     path("user/", include("shortener.users.urls")),
-    path("<str:hash>/", views.OpenLinkView.as_view(), name="open"),
+    path('sentry-debug/', trigger_error),
+    path("<str:hash>/", views.OpenLinkView.as_view(), name="open")
 ]

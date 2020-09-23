@@ -13,6 +13,10 @@ from .models import User
 
 class HomeView(views.TemplateView):
     template_name = "home.html"
+    
+
+def trigger_error(request):
+    raise Exception('Test exception')
 
 
 class LoginView(views.LoginView):
