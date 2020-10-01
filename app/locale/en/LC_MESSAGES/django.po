@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-18 00:54+0200\n"
+"POT-Creation-Date: 2020-10-01 17:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,17 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: app/shortener/links/forms.py:61
+#: app/shortener/links/forms.py:65
+#: app/shortener/users/templates/registration/registration_form.html:15
+#: app/shortener/users/templates/users/edit.html:14
+#: app/shortener/users/templates/users/login.html:15
+#: app/shortener/users/templates/users/password_change.html:14
+#: app/shortener/users/templates/users/password_reset.html:15
+#: app/shortener/users/templates/users/password_reset_confirm.html:15
+msgid "Submit"
+msgstr ""
+
+#: app/shortener/links/forms.py:75
 msgid "Password incorrect"
 msgstr ""
 
@@ -146,6 +156,22 @@ msgstr ""
 msgid "Password protected link"
 msgstr ""
 
+#: app/shortener/templates/404.html:11
+msgid "Stop_sign"
+msgstr ""
+
+#: app/shortener/templates/404.html:13
+msgid "Page not found"
+msgstr ""
+
+#: app/shortener/templates/500.html:13
+msgid "Bomb"
+msgstr ""
+
+#: app/shortener/templates/500.html:15
+msgid "Internal server error"
+msgstr ""
+
 #: app/shortener/templates/footer.html:5
 msgid "URL-Shortener - Shorter is easier!"
 msgstr ""
@@ -226,15 +252,6 @@ msgid ""
 "          If you don’t receive a message in 5 minutes, check the spam "
 "folder.\n"
 "          "
-msgstr ""
-
-#: app/shortener/users/templates/registration/registration_form.html:15
-#: app/shortener/users/templates/users/edit.html:14
-#: app/shortener/users/templates/users/login.html:15
-#: app/shortener/users/templates/users/password_change.html:14
-#: app/shortener/users/templates/users/password_reset.html:15
-#: app/shortener/users/templates/users/password_reset_confirm.html:15
-msgid "Submit"
 msgstr ""
 
 #: app/shortener/users/templates/users/edit.html:8

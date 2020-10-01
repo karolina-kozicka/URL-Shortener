@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-18 00:55+0200\n"
+"POT-Creation-Date: 2020-10-01 17:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,17 @@ msgstr "Data ważności musi być w przyszłości"
 msgid "Password"
 msgstr "Hasło"
 
-#: app/shortener/links/forms.py:61
+#: app/shortener/links/forms.py:65
+#: app/shortener/users/templates/registration/registration_form.html:15
+#: app/shortener/users/templates/users/edit.html:14
+#: app/shortener/users/templates/users/login.html:15
+#: app/shortener/users/templates/users/password_change.html:14
+#: app/shortener/users/templates/users/password_reset.html:15
+#: app/shortener/users/templates/users/password_reset_confirm.html:15
+msgid "Submit"
+msgstr "Wyślij"
+
+#: app/shortener/links/forms.py:75
 msgid "Password incorrect"
 msgstr "Nieprawidłowe hasło"
 
@@ -148,6 +158,22 @@ msgstr "Obraz"
 msgid "Password protected link"
 msgstr "Link zablokowany hasłem"
 
+#: app/shortener/templates/404.html:11
+msgid "Stop_sign"
+msgstr "Znak_stopu"
+
+#: app/shortener/templates/404.html:13
+msgid "Page not found"
+msgstr "Strona nie została znaleziona"
+
+#: app/shortener/templates/500.html:13
+msgid "Bomb"
+msgstr "Bomba"
+
+#: app/shortener/templates/500.html:15
+msgid "Internal server error"
+msgstr "Wewnętrzny błąd serwera"
+
 #: app/shortener/templates/footer.html:5
 msgid "URL-Shortener - Shorter is easier!"
 msgstr "URL-Shortener - Krócej jest łatwiej!"
@@ -253,15 +279,6 @@ msgstr ""
 "adres już został wysłany mail aktywacyjny.\n"
 " Jeśli w ciągu 5 minut nie otrzymasz wiadomości, sprawdź, proszę folder "
 "spam.          "
-
-#: app/shortener/users/templates/registration/registration_form.html:15
-#: app/shortener/users/templates/users/edit.html:14
-#: app/shortener/users/templates/users/login.html:15
-#: app/shortener/users/templates/users/password_change.html:14
-#: app/shortener/users/templates/users/password_reset.html:15
-#: app/shortener/users/templates/users/password_reset_confirm.html:15
-msgid "Submit"
-msgstr "Wyślij"
 
 #: app/shortener/users/templates/users/edit.html:8
 msgid "Edit account"

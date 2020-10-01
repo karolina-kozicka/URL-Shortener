@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block extra_head %}
+  <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="error-page col-md-12 text-center">
+    <img class="image-boom" src="{% static 'image/boom.png' %}" alt="{% translate "Bomb" %}"/>
+    <div class="error-text"> 
+        {% translate "Internal server error"%}
+    </div>
+    <div class="error-code">500</div>
+
+</div>
+{% endblock %}

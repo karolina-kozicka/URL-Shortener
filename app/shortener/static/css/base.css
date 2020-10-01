@@ -96,3 +96,27 @@ body {
   vertical-align: middle;
   text-align: center;
 }
+
+.error-code {
+  font-family: "Special Elite", cursive;
+  font-size: 10vmin;
+  color: white;
+  text-shadow: 0 0 50px black;
+}
+
+.error-text{
+  font-family: "Special Elite", cursive;
+  font-size: 3vmin;
+  color: black;
+  margin: 20px;
+}
+
+.image-boom{
+  margin: 30px;
+  width: 300px;
+}
+
+.image-stop{
+  margin: 30px;
+  width: 300px;
+}
