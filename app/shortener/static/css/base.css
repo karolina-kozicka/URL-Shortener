@@ -1,4 +1,8 @@
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: "Special Elite", cursive;
 }
 
@@ -45,54 +49,54 @@ body {
   padding-bottom: 10px;
 }
 
-.text-form{
-    font-size: 20px;
-    padding: 50px;
+.text-form {
+  font-size: 20px;
+  padding: 50px;
 }
 
-.button-panel{
-    column-count: 2;
-    column-gap: 4%;
+.button-panel {
+  column-count: 2;
+  column-gap: 4%;
 }
 
-.one-button{
-    width: 48%;
-    margin: auto;
-    padding: 15px;
+.one-button {
+  width: 48%;
+  margin: auto;
+  padding: 15px;
 }
 
-.back{
-    font-size: 25px;
-    color: black;
+.back {
+  font-size: 25px;
+  color: black;
 }
 
-.label{
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.register{
+.label {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.reset{
+.register {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.reset {
   padding: 15px;
 }
 
-.double-column{
+.double-column {
   display: flex;
   justify-content: space-between;
   align-items: top;
   flex-wrap: wrap;
 }
 
-.small-button{
+.small-button {
   width: 40px;
   height: 40px;
 }
 
-.button-icon{
+.button-icon {
   vertical-align: middle;
   text-align: center;
 }
@@ -104,19 +108,19 @@ body {
   text-shadow: 0 0 50px black;
 }
 
-.error-text{
+.error-text {
   font-family: "Special Elite", cursive;
   font-size: 3vmin;
   color: black;
   margin: 20px;
 }
 
-.image-boom{
+.image-boom {
   margin: 30px;
   width: 300px;
 }
 
-.image-stop{
+.image-stop {
   margin: 30px;
   width: 300px;
 }

@@ -7,11 +7,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="error-page col-md-12 text-center">
-    <img class="image-stop" src="{% static 'image/stop.svg' %}" alt="{% translate "Stop_sign" %}"/>
+  <div class="error-page col-md-12 text-center">
+    <img class="image-stop" src="{% static 'image/stop.svg' %}" alt="Stop" />
     <div class="error-text"> 
-        {% translate "Page not found"%}
+      {% translate "Page not found" %}
     </div>
     <div class="error-code">404</div>
-</div>
+  </div>
 {% endblock %}

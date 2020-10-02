@@ -22,24 +22,35 @@ from shortener.links import views
 from shortener.users.views import HomeView, trigger_error
 
 
-
 error_pages = []
 if settings.DEBUG:
     error_pages = [
-        path('400/', default_views.bad_request, kwargs={'exception': Exception('Bad Request!')}),
-        path('403/', default_views.permission_denied, kwargs={'exception': Exception('Permission Denied')}),
-        path('404/', default_views.page_not_found, kwargs={'exception': Exception('Page not found')}),
-        path('500/', default_views.server_error),
+        path(
+            "400/",
+            default_views.bad_request,
+            kwargs={"exception": Exception("Bad Request!")},
+        ),
+        path(
+            "403/",
+            default_views.permission_denied,
+            kwargs={"exception": Exception("Permission Denied")},
+        ),
+        path(
+            "404/",
+            default_views.page_not_found,
+            kwargs={"exception": Exception("Page not found")},
+        ),
+        path("500/", default_views.server_error),
     ]
 
 
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
     path("admin/", admin.site.urls),
-    path('i18n/', include('django.conf.urls.i18n')),
+    path("i18n/", include("django.conf.urls.i18n")),
     path("links/", include("shortener.links.urls")),
     path("user/", include("shortener.users.urls")),
-    path('sentry-debug/', trigger_error),
-    * error_pages,
-    path("<str:hash>/", views.OpenLinkView.as_view(), name="open")
+    path("sentry-debug/", trigger_error),
+    *error_pages,
+    path("<str:hash>/", views.OpenLinkView.as_view(), name="open"),
 ]

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 17:28+0200\n"
+"POT-Creation-Date: 2020-10-02 12:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,19 +156,11 @@ msgstr ""
 msgid "Password protected link"
 msgstr ""
 
-#: app/shortener/templates/404.html:11
-msgid "Stop_sign"
-msgstr ""
-
 #: app/shortener/templates/404.html:13
 msgid "Page not found"
 msgstr ""
 
 #: app/shortener/templates/500.html:13
-msgid "Bomb"
-msgstr ""
-
-#: app/shortener/templates/500.html:15
 msgid "Internal server error"
 msgstr ""
 
