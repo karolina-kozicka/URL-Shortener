@@ -19,7 +19,7 @@
    "pk": 3,
    "fields": {
       "name": "Cleaning expired links",
-      "task": "shortener.links.task.delete_expired_links",
+      "task": "shortener.links.tasks.delete_expired_links",
       "interval": 1,
       "crontab": null,
       "solar": null,
