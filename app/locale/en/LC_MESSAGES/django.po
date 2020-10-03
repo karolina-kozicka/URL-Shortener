@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-02 12:51+0200\n"
+"POT-Creation-Date: 2020-10-03 22:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,17 +139,6 @@ msgstr ""
 
 #: app/shortener/links/templates/links/list.html:59
 msgid "Add your first link"
-msgstr ""
-
-#: app/shortener/links/templates/links/list.html:63
-#: app/shortener/templates/home.html:15
-#: app/shortener/users/templates/registration/activation_failed.html:19
-#: app/shortener/users/templates/registration/registration_disallowed.html:19
-#: app/shortener/users/templates/registration/registration_form.html:20
-#: app/shortener/users/templates/users/login.html:23
-#: app/shortener/users/templates/users/password_reset.html:20
-#: app/shortener/users/templates/users/password_reset_confirm.html:20
-msgid "Image"
 msgstr ""
 
 #: app/shortener/links/templates/links/password.html:7

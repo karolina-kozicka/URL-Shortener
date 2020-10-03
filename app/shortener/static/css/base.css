@@ -118,9 +118,15 @@ body {
 .image-boom {
   margin: 30px;
   width: 300px;
+  max-width: 100%;
 }
 
 .image-stop {
   margin: 30px;
   width: 300px;
+  max-width: 100%;
+}
+
+.image-cut {
+  max-width: 100%;
 }
